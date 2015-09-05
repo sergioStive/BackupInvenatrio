@@ -1,0 +1,322 @@
+/* 
+    Created on : 30/05/2015, 02:27:51 PM
+    Author     : Erick Guzmán
+*/
+body{
+    background-image: url(../imagenes/BG_Inventario_Expertcob.png);
+    background-repeat: repeat;
+    text-align: center;
+}
+.contenedor{
+    position: relative;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    font-family: "Century Gothic";
+    font-size: 15px;
+}
+.logo {
+    position: relative;
+    background-image: url(../imagenes/Logo_Expertcob.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 420px;
+    height: 155px;
+    margin-bottom: 30px;
+}
+.formLogin {
+    background-color: white;
+    width: 440px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 3px;
+    position: relative;
+    box-shadow: 2px 1px 3px gold;
+    border: 1px gold solid;
+    font-size: 15px;
+}
+.formLogin td{
+    padding-right: 30px;
+    height: 45px;
+    text-align: right;
+    width: 180px;
+}
+.formLogin table{
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+#msjIncorrecto{
+    margin-top: -5px;
+    font-family: "arial"; 
+    font-size: 13px;
+    color: #5D0C0C;
+    font-weight: bold;
+    height: 22px;
+}
+#msjIncorrecto label{
+    height: 100%;
+    width: auto;
+    padding: 3px;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+    background-color: #FC7E7E;
+    border: 2px #B01616 solid;
+    border-radius: 3px;
+}
+.cuerpo{
+    background-color: ghostwhite;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 70px;
+    border: 2px gold groove; 
+}
+.obligatorio{
+    color: red;
+    float: left;
+}
+.astx{
+    color: red;
+}
+.msjObligatorio{
+    color: red;
+    width: 90%;
+    height: 50px;
+    text-align: left;
+    padding-left: 40px;
+}
+h3{
+    color: #3CB371;
+    font-family: "Century Gothic"; 
+}
+select{
+    width: 157px;
+    font-family: "Century Gothic";
+    font-size: 14px;
+}
+#signupForm label.error {
+    width:auto;
+    height:2px;
+    float: right;
+    font-size: 10.5px;
+    color:#F00;
+    font-weight: normal;
+}
+input{
+    font-family: "Century Gothic";
+    font-size: 14px;
+}
+.barradenavegacion{
+    padding-bottom: 25px;
+    background-color: teal;
+    width: 100.3%;
+    position:relative;
+    z-index:4;
+    border-top: 1px gold solid;
+}
+.barradenavegacion ul{
+    width:100%;
+    list-style-type: none;
+    font-size: 17px;
+    font-weight: bolder;
+    float: left; 
+    margin-top: 0;
+    margin-left: -20px;
+}
+.barradenavegacion ul li{
+    width:19%; 
+    float:left; 
+    border-left: 1px gold solid;
+    border-right: 1px gold solid;
+}
+.barradenavegacion ul li a span {
+    float:left; 
+    padding-top: 2px;
+    height:23px; 
+    width:100%;
+    background:teal;
+    text-align:center; 
+    border-radius: 2px;
+}
+.barradenavegacion ul li a {
+    color: whitesmoke; 
+    text-align:center; 
+    text-decoration: none;
+}
+.barradenavegacion ul li a.active,
+.barradenavegacion ul li a:hover { 
+    color: gold;
+}
+.barradenavegacion ul li a:focus { 
+    color: gold;
+}
+.barradenavegacion ul li a.active span,
+.barradenavegacion ul li a:hover span{ 
+    font-size: 18px;
+    background:#669999;
+}
+.barradenavegacion ul li a:focus span{ 
+    font-size: 18px;
+    background:#669999;
+}
+.mi-menu ul {
+    width:100%;
+    position: absolute;
+    top:25.5px; /* se ubican debajo del enlace principal */
+}
+.mi-menu li {
+    position: relative;
+    background-color: teal;
+}
+/* son visibes al poner el cursor encima */
+.mi-menu li:hover > ul { 
+    opacity: 1;
+}
+.mi-menu li:focus > ul { 
+    opacity: 1;
+}
+/* cada uno de los items de los submenús */
+.mi-menu ul li {
+    height: 0; /* no son visibles */
+    overflow: hidden;
+}
+.mi-menu li:hover > ul li {
+    height: 25px; /* los mostramos */
+    overflow: visible;
+    width:100%;
+    padding-top: 5px;
+    margin-left: -20px;
+    border-bottom: 1px gold solid;
+}
+.mi-menu li:focus > ul li {
+    height: 25px; /* los mostramos */
+    overflow: visible;
+    width:100%;
+    padding-top: 6px;
+    margin-left: -20px;
+    border-bottom: 1px gold solid;
+}
+.mi-menu ul li a {
+    /* el ancho dependerá de los textos a utilizar */
+    width:110%;
+    text-align: center;
+    font-family:"Century Gothic";
+}
+.mi-menu ul li a:hover {
+    /* el ancho dependerá de los textos a utilizar */
+    font-size: 18px;
+}
+/* cada item del menu */
+.pg-normal {
+    color: black;
+    font-family: "century gothic";
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: none;    
+    cursor: pointer; 
+}
+.pg-selected {
+    color: #008080;
+    font-family: "century gothic";
+    font-size: 16px;
+    font-weight: bold;        
+    text-decoration: underline;
+    cursor: pointer;
+}
+#pageNavPosition{
+    margin-top: 20px;
+}
+.banner{
+    background-image: url(../imagenes/Banner.png);
+    background-color: ghostwhite;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 121px;
+    width: 100.5%;
+    margin-left: -1px;
+}
+.ventanaRegistro{
+    font-family: "Century Gothic";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 10;
+    background-image: url(../imagenes/Capa-VM.png);
+    display: none;
+}
+.ventanaModificacion{
+    font-family: "Century Gothic";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 10;
+    background-image: url(../imagenes/Capa-VM.png);
+    display: none;
+}
+#cerrar{
+    float: right;
+    margin-right: 10px;
+    color: red;
+    font-weight: bold;
+    text-decoration: none;
+}
+.ventanaEliminar{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 4;
+    background-image: url(../imagenes/Capa-VM.png); 
+}
+.notificacion{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;    
+    z-index: 4;
+}
+.mensaje {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -280px;
+    margin-top: -130px;
+    background-color: white;
+    font-size: 16px;
+    width: 500px;
+    color: cadetblue;
+    height: 100px;
+    padding: 30px;
+    padding-bottom: 30px;
+    border: 3px #62B0E2 groove;
+    font-weight: bold;
+}
+.mensaje h2{
+    margin-top: 0px;
+    color: #364C9C;
+    margin-bottom: 30px;
+}
+.mensaje table{
+    margin: 0 auto;
+}
+.mensaje input{
+    width: 40px;
+    margin-top: 10px;
+}
+#err{
+    border: 3px #FC7E7E groove;
+    color: red;
+}
+#err img{
+    margin-bottom: -3px;
+    margin-right: 10px;
+}

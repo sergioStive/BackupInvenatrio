@@ -1,0 +1,376 @@
+/* 
+    Created on : 30/05/2015, 02:27:51 PM
+    Author     : Erick Guzmán
+*/
+@import"index.css";
+
+.formRegistrarUsuario{
+    background-color: white;
+    width: 680px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formRegistrarUsuario table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 50px;
+}
+.formRegistrarUsuario td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formRegistrarUsuario td input{
+    float: left;
+    margin-right: 3px;
+}
+.formRegistrarUsuario td select{
+    float: left;
+}
+.formRegistrarSucursal{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formRegistrarSucursal table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formRegistrarSucursal td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formRegistrarSucursal td input{
+    float: left;
+    margin-right: 3px;
+}
+.formOficina{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formOficina table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formOficina td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formOficina td input{
+    float: left;
+    margin-right: 3px;
+}
+.formOficina td select{
+    float: left;
+}
+.formPuesto{
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formPuesto table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formPuesto td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formPuesto td input{
+    float: left;
+    margin-right: 3px;
+}
+.formPuesto td select{
+    float: left;
+    margin-right: 20px;
+}
+.formSisOper{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formSisOper table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formSisOper td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formSisOper td input{
+    float: left;
+    margin-right: 3px;
+}
+.formOffice{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formOffice table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formOffice td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formOffice td input{
+    float: left;
+    margin-right: 3px;
+}
+.formMarca{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formMarca table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formMarca td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formMarca td input{
+    float: left;
+    margin-right: 3px;
+}
+.formClase{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formClase table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formClase td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formClase td input{
+    float: left;
+    margin-right: 3px;
+}
+.formTipo{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formTipo table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formTipo td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formTipo td input{
+    float: left;
+    margin-right: 3px;
+}
+.formTipo select{
+    float: left;
+}
+.formEstado{
+    background-color: white;
+    width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formEstado table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formEstado td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formEstado td input{
+    float: left;
+    margin-right: 3px;
+}
+.formMueble{
+    background-color: white;
+    width: 680px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+}
+.formMueble table{
+    margin-top: 40px;
+    padding-bottom: 25px;
+    margin-left: 100px;
+}
+.formMueble td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formMueble td input{
+    float: left;
+    margin-right: 3px;
+}
+.formMueble td select{
+    float: left;
+}
+.formRevision{
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    padding-top: 20px;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 4px 4px 7px #B0C4DE;
+    border: 1px #B0C4DE solid;
+    margin-bottom: 50px;
+}
+.formRevision table{
+    margin-top: 40px;
+    margin-left: 90px;
+    padding-bottom: 25px;
+}
+.formRevision td{
+    text-align: right;
+    padding-right: 30px;
+    height: 30px;
+}
+.formRevision td select{
+    float: left;
+    margin-right: 20px;
+}
+.list{
+    margin: 0 auto;
+    width: 95%;
+}
+.link{
+    text-decoration: none;
+}
+.buscador{
+    background-color: gainsboro;
+    border-radius: 3px;
+    border: 2px #6495ED solid;
+    width: 580px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.buscador input{
+    width: 250px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.tabla table{
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 10px;
+    border: 1px #6495ED solid;
+}
+.desplegable{
+    background-color: #B0C4DE;
+    border-radius: 3px;
+}
+.desplegable table{
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 10px;
+}
+.desplegable h3{
+    font-weight: bold;
+    color: whitesmoke;
+    font-family: "Century Gothic";
+    background-color: lightslategray;
+}
+#contenido{
+    background-color: white;
+}
+#encabezado{
+    color: white;
+    background-color: teal;
+    font-weight: bold;
+}
+.tabla tbody td{
+    background-color: white;
+    border-bottom: 1px antiquewhite solid;
+}
