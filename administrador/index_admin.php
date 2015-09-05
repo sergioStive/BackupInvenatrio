@@ -1,4 +1,4 @@
-<?php session_start(); // inicio la sesión  ?>
+<?php session_start(); // inicio la sesión   ?>
 <!DOCTYPE html>
 <!--
     Author     : Erick Guzmán
@@ -35,8 +35,6 @@
 
             <div class="cuerpo">       
                 <?php
-                echo "Hola Erick";
-                echo "Que mas Erick";
                 ?>
             </div>
         </div>

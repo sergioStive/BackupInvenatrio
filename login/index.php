@@ -58,21 +58,21 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                     switch ($uDto->getIdRol()) {
                         case 1: {
                                 session_start();
-                                $_SESSION["USUARIO"] = $uDto->getNumeroDocumento();
+                                $_SESSION["USUARIO"] = $uDto->getIdPersona();
                                 $_SESSION["ROL"] = $uDto->getIdRol();
                                 header('location:../administrador/index_admin.php');
                             }
                             break;
                         case 2: {
                                 session_start();
-                                $_SESSION["USUARIO"] = $uDto->getNumeroDocumento();
+                                $_SESSION["USUARIO"] = $uDto->getIdPersona();
                                 $_SESSION["ROL"] = $uDto->getIdRol();
                                 header('location:../sistemas/index_sistem.php');
                             }
                             break;
                         case 3: {
                                 session_start();
-                                $_SESSION["USUARIO"] = $uDto->getNumeroDocumento();
+                                $_SESSION["USUARIO"] = $uDto->getIdPersona();
                                 $_SESSION["ROL"] = $uDto->getIdRol();
                                 header('location:../consulta/index_consulta.php');
                             }

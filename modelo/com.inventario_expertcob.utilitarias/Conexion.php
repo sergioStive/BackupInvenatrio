@@ -31,8 +31,8 @@ class Conexion {
      * Método encargado de conectar con la base de datos
      */
     private function conectar() {
-        $this->link = mysql_connect($this->host, $this->user, $this->password) or die("No se puede conectar a MySql " . mysql_error());
-        mysql_select_db($this->db, $this->link) or die("No existe la base de datos: " . mysql_error());
+        $this->link = mysqli_connect($this->host, $this->user, $this->password) or die("No se puede conectar a MySql " . mysql_error());
+        mysqli_select_db($this->link, $this->db) or die("No existe la base de datos: " . mysql_error());
     }
 
     /**
@@ -52,7 +52,7 @@ class Conexion {
      * @return Variable con el resultado obtenido de la ejecución
      */
     public function ejecutar($query) {
-        $this->smtm = mysql_query($query, $this->link) or die("Error en el Query $query " . mysql_error());
+        $this->smtm = mysqli_query($this->link, $query) or die("Error en el Query $query " . mysql_error());
         return $this->smtm;
     }
 

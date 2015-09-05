@@ -60,7 +60,7 @@ class UsuarioDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Usuarios WHERE IdUsuario <> 830121569;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new UsuarioDTO($res['IdUsuario'], $res['Nombres'], $res['Apellidos'], "", $res['IdSucursal'], $res['IdRol']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class UsuarioDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Usuarios WHERE IdUsuario = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new UsuarioDTO($res['IdUsuario'], $res['Nombres'], $res['Apellidos'], "", $res['IdSucursal'], $res['IdRol']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class UsuarioDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Usuarios WHERE Clave = MD5('$clave') AND IdUsuario = $numero;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new UsuarioDTO($res['IdUsuario'], $res['Nombres'], $res['Apellidos'], "", $res['IdSucursal'], $res['IdRol']);
             }
             return $this->dto;
@@ -101,8 +101,8 @@ class UsuarioDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Usuarios WHERE IdUsuario = $numero AND Clave = MD5('$clave');";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new UsuarioDTO($res['IdUsuario'], $res['Nombres'], $res['Apellidos'], "", $res['IdSucursal'], $res['IdRol']);
             }
             return $this->dto;
