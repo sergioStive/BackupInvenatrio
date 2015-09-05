@@ -35,7 +35,7 @@
 
             <div class="cuerpo">       
                 <?php
-                echo "Hola ";
+                echo "Hola Erick";
                 ?>
             </div>
         </div>
