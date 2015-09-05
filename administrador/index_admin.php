@@ -35,6 +35,7 @@
 
             <div class="cuerpo">       
                 <?php
+                echo "Hola ";
                 ?>
             </div>
         </div>
