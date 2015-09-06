@@ -60,7 +60,7 @@ class SistemaOperativoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM SistemaOperativos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new SistemaOperativoDTO($res['IdSisOperativo'], $res['NombreSisOperativo']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class SistemaOperativoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM SistemaOperativos WHERE IdSisOperativo = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new SistemaOperativoDTO($res['IdSisOperativo'], $res['NombreSisOperativo']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class SistemaOperativoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM SistemaOperativos WHERE nombre_so = '$nombre';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new SistemaOperativoDTO($res['IdSisOperativo'], $res['NombreSisOperativo']);
             }
             return $this->dto;

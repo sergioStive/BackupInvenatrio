@@ -60,7 +60,7 @@ class AreaDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Areas;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new AreaDTO($res['IdArea'], $res['NombreArea'], $res['IdOficina']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class AreaDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Areas WHERE IdArea = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new AreaDTO($res['IdArea'], $res['NombreArea'], $res['IdOficina']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class AreaDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Areas WHERE NombreArea = '$nombre' AND IdOficina = $idOficina;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new AreaDTO($res['IdArea'], $res['NombreArea'], $res['IdOficina']);
             }
             return $this->dto;
@@ -102,7 +102,7 @@ class AreaDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Areas WHERE IdOficina = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, AreaDTO($res['IdArea'], $res['NombreArea'], $res['IdOficina']));
             }
             return $this->lista;

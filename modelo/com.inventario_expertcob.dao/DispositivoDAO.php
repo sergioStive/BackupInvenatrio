@@ -60,7 +60,7 @@ class DispositivoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Dispositivos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class DispositivoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Dispositivos WHERE Serial = '$id';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']);
             }
             return $this->dto;
@@ -88,7 +88,7 @@ class DispositivoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Dispositivos WHERE IdPuesto = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']));
             }
             return $this->lista;
@@ -101,8 +101,8 @@ class DispositivoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Dispositivos WHERE IdTipo = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']);
             }
             return $this->dto;
@@ -115,8 +115,8 @@ class DispositivoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Dispositivos WHERE IdMarca = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']);
             }
             return $this->dto;
@@ -129,8 +129,8 @@ class DispositivoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Dispositivos WHERE IdEstado = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']);
             }
             return $this->dto;
@@ -144,8 +144,8 @@ class DispositivoDAO extends AbstractDAO {
             $dispositivos = 0;
             $this->query = "SELECT COUNT(Serial) AS Dispositivos FROM Dispositivos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $dispositivos = $res['Dispositivos'];
             }
             return $dispositivos;
@@ -159,7 +159,7 @@ class DispositivoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT D.Serial, D.Modelo, D.Valor, D.Observacion, D.IdMarca, D.IdTipo, D.IdEstado, D.SerialEquipo, D.IdPuesto FROM Dispositivos AS D INNER JOIN Puestos AS P ON D.IdPuesto = P.IdPuesto INNER JOIN Areas AS A ON A.IdArea = P.IdArea WHERE A.IdOficina = $idOficina;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']));
             }
             return $this->lista;
@@ -173,7 +173,7 @@ class DispositivoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT D.Serial, D.Modelo, D.Valor, D.Observacion, D.IdMarca, D.IdTipo, D.IdEstado, D.SerialEquipo, D.IdPuesto FROM Dispositivos AS D INNER JOIN Puestos AS P ON D.IdPuesto = P.IdPuesto WHERE P.IdArea = $idArea;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoDTO($res['Serial'], $res['Modelo'], $res['Valor'], $res['Observacion'], $res['IdMarca'], $res['IdTipo'], $res['IdEstado'], $res['SerialEquipo'], $res['IdPuesto']));
             }
             return $this->lista;

@@ -60,7 +60,7 @@ class SucursalDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Sucursales;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new SucursalDTO($res['IdSucursal'], $res['Barrio'], $res['Direccion'], $res['Telefono'], $res['IdCiudad']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class SucursalDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Sucursales WHERE IdSucursal = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new SucursalDTO($res['IdSucursal'], $res['Barrio'], $res['Direccion'], $res['Telefono'], $res['IdCiudad']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class SucursalDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Sucursales WHERE IdCiudad = '$ciudad' AND Direccion = '$direccion';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new SucursalDTO($res['IdSucursal'], $res['Barrio'], $res['Direccion'], $res['Telefono'], $res['IdCiudad']);
             }
             return $this->dto;

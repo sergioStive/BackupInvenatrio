@@ -60,7 +60,7 @@ class RevisionDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Revisiones;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new RevisionDTO($res['IdRevision'], $res['Fecha'], $res['Mantenimiento'], $res['Responsable'], $res['Observacion'], $res['SerialEquipo']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class RevisionDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Revisiones WHERE id_revision = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new RevisionDTO($res['IdRevision'], $res['Fecha'], $res['Mantenimiento'], $res['Responsable'], $res['Observacion'], $res['SerialEquipo']);
             }
             return $this->dto;
@@ -88,7 +88,7 @@ class RevisionDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Revisiones WHERE SerialEquipo = $id ORDER BY Fecha DESC;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new RevisionDTO($res['IdRevision'], $res['Fecha'], $res['Mantenimiento'], $res['Responsable'], $res['Observacion'], $res['SerialEquipo']));
             }
             return $this->lista;

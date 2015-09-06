@@ -50,7 +50,7 @@ class DispositivoCompraDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM DispositivoCompras;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['IdCompra']));
             }
             return $this->lista;
@@ -63,8 +63,8 @@ class DispositivoCompraDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM DispositivoCompras WHERE SerialDispositivo = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new EstadoDTO($res['IdEstado'], $res['Descripcion']);
             }
             return $this->dto;
@@ -78,7 +78,7 @@ class DispositivoCompraDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM DispositivoCompras WHERE IdCompra = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['IdCompra']));
             }
             return $this->lista;

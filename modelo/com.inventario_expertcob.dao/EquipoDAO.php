@@ -7,7 +7,7 @@
  */
 require_once '../modelo/com.inventario_expertcob.dao/AbstractDAO.php';
 
- class EquipoDAO extends AbstractDAO {
+class EquipoDAO extends AbstractDAO {
 
     public function __construct() {
         parent::__construct();
@@ -58,10 +58,10 @@ require_once '../modelo/com.inventario_expertcob.dao/AbstractDAO.php';
     public function verTodos() {
         try {
             $this->lista = array();
-            $this->query = "SELECT * FROM Torres;";
+            $this->query = "SELECT * FROM Equipos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
-                array_push($this->lista, new TorreDTO($res['id_torre'], $res['procesador'], $res['ram'], $res['hdd'], $res['disquete'], $res['cd_rom'], $res['antivirus'], $res['sis_operativo_key'], $res['office_key'], $res['id_so'], $res['id_office']));
+            while ($res = mysqli_fetch_array($this->resultado)) {
+                array_push($this->lista, new EquipoDTO($res['Serial'], $res['Procesador'], $res['Ram'], $res['Hdd'], $res['Disquete'], $res['CdRom'], $res['Antivirus'], $res['SisOperativoKey'], $res['OfficeKey'], $res['IdSisOperativo'], $res['IdOffice']));
             }
             return $this->lista;
         } catch (Exception $ex) {
@@ -71,11 +71,11 @@ require_once '../modelo/com.inventario_expertcob.dao/AbstractDAO.php';
 
     public function verUno($id) {
         try {
-            $this->query = "SELECT * FROM Torres WHERE id_torre = $id;";
+            $this->query = "SELECT * FROM Equipos WHERE Serial = '$id';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
-                $this->dto = new TorreDTO($res['id_torre'], $res['procesador'], $res['ram'], $res['hdd'], $res['disquete'], $res['cd_rom'], $res['antivirus'], $res['sis_operativo_key'], $res['office_key'], $res['id_so'], $res['id_office']);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
+                $this->dto = new EquipoDTO($res['Serial'], $res['Procesador'], $res['Ram'], $res['Hdd'], $res['Disquete'], $res['CdRom'], $res['Antivirus'], $res['SisOperativoKey'], $res['OfficeKey'], $res['IdSisOperativo'], $res['IdOffice']);
             }
             return $this->dto;
         } catch (Exception $ex) {
@@ -85,11 +85,11 @@ require_once '../modelo/com.inventario_expertcob.dao/AbstractDAO.php';
 
     public function verTorrePorOffice($id) {
         try {
-            $this->query = "SELECT * FROM Torres WHERE id_office = $id;";
+            $this->query = "SELECT * FROM Equipos WHERE IdOffice = '$id';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
-                $this->dto = new TorreDTO($res['id_torre'], $res['procesador'], $res['ram'], $res['hdd'], $res['disquete'], $res['cd_rom'], $res['antivirus'], $res['sis_operativo_key'], $res['office_key'], $res['id_so'], $res['id_office']);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
+                $this->dto = new EquipoDTO($res['Serial'], $res['Procesador'], $res['Ram'], $res['Hdd'], $res['Disquete'], $res['CdRom'], $res['Antivirus'], $res['SisOperativoKey'], $res['OfficeKey'], $res['IdSisOperativo'], $res['IdOffice']);
             }
             return $this->dto;
         } catch (Exception $ex) {
@@ -99,11 +99,11 @@ require_once '../modelo/com.inventario_expertcob.dao/AbstractDAO.php';
 
     public function verTorrePorSisOperativo($id) {
         try {
-            $this->query = "SELECT * FROM Torres WHERE id_so = $id;";
+            $this->query = "SELECT * FROM Equipos WHERE IdSisOperativo = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
             if (mysql_num_rows($this->resultado) > 0) {
                 $res = mysql_fetch_array($this->resultado);
-                $this->dto = new TorreDTO($res['id_torre'], $res['procesador'], $res['ram'], $res['hdd'], $res['disquete'], $res['cd_rom'], $res['antivirus'], $res['sis_operativo_key'], $res['office_key'], $res['id_so'], $res['id_office']);
+                $this->dto = new EquipoDTO($res['Serial'], $res['Procesador'], $res['Ram'], $res['Hdd'], $res['Disquete'], $res['CdRom'], $res['Antivirus'], $res['SisOperativoKey'], $res['OfficeKey'], $res['IdSisOperativo'], $res['IdOffice']);
             }
             return $this->dto;
         } catch (Exception $ex) {

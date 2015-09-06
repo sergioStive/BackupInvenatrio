@@ -60,7 +60,7 @@ class MuebleEnserDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM MuebleEnseres;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new MuebleEnserDTO($res['IdMuebleEnser'], $res['Descripcion'], $res['Cantidad'], $res['Valor'], $res['IdEstado'], $res['IdPuesto']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class MuebleEnserDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM MuebleEnseres WHERE IdMuebleEnser = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new MuebleEnserDTO($res['IdMuebleEnser'], $res['Descripcion'], $res['Cantidad'], $res['Valor'], $res['IdEstado'], $res['IdPuesto']);
             }
             return $this->dto;
@@ -88,7 +88,7 @@ class MuebleEnserDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM MuebleEnseres WHERE IdPuesto = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new MuebleEnserDTO($res['IdMuebleEnser'], $res['Descripcion'], $res['Cantidad'], $res['Valor'], $res['IdEstado'], $res['IdPuesto']));
             }
             return $this->lista;
@@ -101,8 +101,8 @@ class MuebleEnserDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM MuebleEnseres WHERE IdEstado = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new MuebleEnserDTO($res['IdMuebleEnser'], $res['Descripcion'], $res['Cantidad'], $res['Valor'], $res['IdEstado'], $res['IdPuesto']);
             }
             return $this->dto;

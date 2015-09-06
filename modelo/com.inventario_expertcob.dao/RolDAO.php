@@ -60,7 +60,7 @@ class RolDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Roles;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new RolDTO($res['IdRol'], $res['NombreRol']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class RolDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Roles WHERE IdRol = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new RolDTO($res['IdRol'], $res['NombreRol']);
             }
             return $this->dto;

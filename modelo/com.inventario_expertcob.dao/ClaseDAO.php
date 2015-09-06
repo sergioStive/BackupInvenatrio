@@ -60,7 +60,7 @@ class ClaseDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Clases;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new ClaseDTO($res['IdClase'], $res['NombreClase']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class ClaseDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Clases WHERE IdClase = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new ClaseDTO($res['IdClase'], $res['NombreClase']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class ClaseDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Clases WHERE NombreClase = '$nombre';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new ClaseDTO($res['IdClase'], $res['NombreClase']);
             }
             return $this->dto;

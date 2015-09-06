@@ -60,7 +60,7 @@ class TipoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Tipos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new TipoDTO($res['IdTipo'], $res['NombreTipo'], $res['IdClase']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class TipoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Tipos WHERE IdTipo = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new TipoDTO($res['IdTipo'], $res['NombreTipo'], $res['IdClase']);
             }
             return $this->dto;
@@ -87,8 +87,8 @@ class TipoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Tipos WHERE NombreTipo = '$nombre';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new TipoDTO($res['IdTipo'], $res['NombreTipo'], $res['IdClase']);
             }
             return $this->dto;
@@ -101,8 +101,8 @@ class TipoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Tipos WHERE IdClase = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new TipoDTO($res['IdTipo'], $res['NombreTipo'], $res['IdClase']);
             }
             return $this->dto;

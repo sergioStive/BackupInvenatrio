@@ -60,7 +60,7 @@ class PuestoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Puestos;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new PuestoDTO($res['IdPuesto'], $res['NombrePuesto'], $res['IdArea'], $res['IdResponsable']));
             }
             return $this->lista;
@@ -73,8 +73,8 @@ class PuestoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Puestos WHERE IdPuesto = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new PuestoDTO($res['IdPuesto'], $res['NombrePuesto'], $res['IdArea'], $res['IdResponsable']);
             }
             return $this->dto;
@@ -88,8 +88,8 @@ class PuestoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Puestos WHERE IdArea = $id AND NombrePuesto = '$nombre';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new PuestoDTO($res['IdPuesto'], $res['NombrePuesto'], $res['IdArea'], $res['IdResponsable']);
             }
             return $this->dto;
@@ -103,7 +103,7 @@ class PuestoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Puestos WHERE IdArea = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new PuestoDTO($res['IdPuesto'], $res['NombrePuesto'], $res['IdArea'], $res['IdResponsable']));
             }
             return $this->lista;
@@ -117,7 +117,7 @@ class PuestoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Puestos WHERE IdResponsable = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new PuestoDTO($res['IdPuesto'], $res['NombrePuesto'], $res['IdArea'], $res['IdResponsable']));
             }
             return $this->lista;

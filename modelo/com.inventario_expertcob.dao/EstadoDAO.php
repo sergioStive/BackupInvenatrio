@@ -60,7 +60,7 @@ class EstadoDAO extends AbstractDAO {
             $this->lista = array();
             $this->query = "SELECT * FROM Estados;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            while ($res = mysql_fetch_array($this->resultado)) {
+            while ($res = mysqli_fetch_array($this->resultado)) {
                 array_push($this->lista, new EstadoDTO($res['IdEstado'], $res['Descripcion']));
             }
             return $this->lista;
@@ -73,7 +73,7 @@ class EstadoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Estados WHERE IdEstado = $id;";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
+            if (mysqli_num_rows($this->resultado) > 0) {
                 $res = mysql_fetch_array($this->resultado);
                 $this->dto = new EstadoDTO($res['IdEstado'], $res['Descripcion']);
             }
@@ -87,8 +87,8 @@ class EstadoDAO extends AbstractDAO {
         try {
             $this->query = "SELECT * FROM Estados WHERE Descripcion = '$descripcion';";
             $this->resultado = $this->conexion->ejecutar($this->query);
-            if (mysql_num_rows($this->resultado) > 0) {
-                $res = mysql_fetch_array($this->resultado);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
                 $this->dto = new EstadoDTO($res['IdEstado'], $res['Descripcion']);
             }
             return $this->dto;
