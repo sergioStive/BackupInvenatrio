@@ -29,7 +29,7 @@ class ProveedorDAO extends AbstractDAO {
 
     public function insertar($dto) {
         try {
-            $this->query = "INSERT INTO Proveedor VALUES(" . $dto->getIdProveedor() . ",'" . $dto->getNombreProveedor() . "','" . $dto->getDireccion() . "', '" . $dto->getTelefono() . "', '" . $dto->getEmail() . "');";
+            $this->query = "INSERT INTO Proveedores VALUES(" . $dto->getIdProveedor() . ",'" . $dto->getNombreProveedor() . "','" . $dto->getDireccion() . "', '" . $dto->getTelefono() . "', '" . $dto->getEmail() . "');";
             $this->resultado = $this->conexion->ejecutar($this->query);
             if ($this->resultado) {
                 return "El proveedor fue registrado exitosamente";
