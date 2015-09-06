@@ -9,35 +9,27 @@
 class DispositivoCompraDTO {
 
     private $serialDispositivo = "";
-    private $idCompra = 0;
+    private $numFactura = "";
 
-    public function __construct($serialDispositivo, $idCompra) {
-        if (is_numeric($idCompra)) {
-            $this->serialDispositivo = $serialDispositivo;
-            $this->idCompra = $idCompra;
-        } else {
-            throw new Exception("El id de la compra no es valido");
-        }
+    public function __construct($serialDispositivo, $numFactura) {
+        $this->serialDispositivo = $serialDispositivo;
+        $this->numFactura = $numFactura;
     }
 
     public function getSerialDispositivo() {
         return $this->serialDispositivo;
     }
 
-    public function getIdCompra() {
-        return $this->idCompra;
+    public function getNumFactura() {
+        return $this->numFactura;
     }
 
     public function setSerialDispositivo($serialDispositivo) {
         $this->serialDispositivo = $serialDispositivo;
     }
 
-    public function setIdCompra($idCompra) {
-        if (is_numeric($idCompra)) {
-            $this->idCompra = $idCompra;
-        } else {
-            throw new Exception("El id de la compra no es valido");
-        }
+    public function setNumFactura($NumFactura) {
+        $this->numFactura = $NumFactura;
     }
 
 }

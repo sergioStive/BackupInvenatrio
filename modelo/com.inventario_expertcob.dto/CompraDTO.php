@@ -8,17 +8,15 @@
  */
 class CompraDTO {
 
-    private $idCompra = 0;
-    private $factura = "";
+    private $numFactura = "";
     private $valor = 0.0;
     private $fecha = "";
     private $garantia = "";
     private $idProveedor = 0;
 
-    public function __construct($idCompra, $factura, $valor, $fecha, $garantia, $idProveedor) {
-        if (is_numeric($idCompra) && is_numeric($idProveedor) && is_double($valor)) {
-            $this->idCompra = $idCompra;
-            $this->factura = $factura;
+    public function __construct($numFactura, $valor, $fecha, $garantia, $idProveedor) {
+        if (is_numeric($idProveedor) && is_double($valor)) {
+            $this->numFactura = $numFactura;
             $this->valor = $valor;
             $this->fecha = $fecha;
             $this->garantia = $garantia;
@@ -28,12 +26,8 @@ class CompraDTO {
         }
     }
 
-    public function getIdCompra() {
-        return $this->idCompra;
-    }
-
-    public function getFactura() {
-        return $this->factura;
+    public function getNumFactura() {
+        return $this->numFactura;
     }
 
     public function getValor() {
@@ -52,16 +46,8 @@ class CompraDTO {
         return $this->idProveedor;
     }
 
-    public function setIdCompra($idCompra) {
-        if (is_numeric($idCompra)) {
-            $this->idCompra = $idCompra;
-        } else {
-            throw new Exception("El id de la compra no es valido");
-        }
-    }
-
-    public function setFactura($factura) {
-        $this->factura = $factura;
+    public function setNumFactura($numFactura) {
+        $this->numFactura = $numFactura;
     }
 
     public function setValor($valor) {

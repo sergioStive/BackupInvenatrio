@@ -19,7 +19,7 @@ class DispositivoCompraDAO extends AbstractDAO {
 
     public function insertar($dto) {
         try {
-            $this->query = "INSERT INTO DispositivoCompras VALUES('" . $dto->getSerialDispositivo() . "', " . $dto->getIdCompra() . ");";
+            $this->query = "INSERT INTO DispositivoCompras VALUES('" . $dto->getSerialDispositivo() . "', '" . $dto->getNumFactura() . "');";
             $this->resultado = $this->conexion->ejecutar($this->query);
             if ($this->resultado) {
                 return "El enlace entre dispositivos y compras fue registrado exitosamente";
@@ -31,9 +31,9 @@ class DispositivoCompraDAO extends AbstractDAO {
         }
     }
 
-    public function modificar(DispositivoCompraDTO $dto) {
+    public function modificar($dto) {
         try {
-            $this->query = "UPDATE DispositivoCompras SET SerialDispositivo = '" . $dto->getSerialDispositivo() . "' WHERE IdCompra = " . $dto->getIdCompra() . ";";
+            $this->query = "UPDATE DispositivoCompras SET SerialDispositivo = '" . $dto->getSerialDispositivo() . "' WHERE NumFactura = '" . $dto->getNumFactura() . "';";
             $this->resultado = $this->conexion->ejecutar($this->query);
             if ($this->resultado) {
                 return "El enlace entre dispositivos y compras fue modificado exitosamente";
@@ -51,7 +51,7 @@ class DispositivoCompraDAO extends AbstractDAO {
             $this->query = "SELECT * FROM DispositivoCompras;";
             $this->resultado = $this->conexion->ejecutar($this->query);
             while ($res = mysqli_fetch_array($this->resultado)) {
-                array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['IdCompra']));
+                array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['NumFactura']));
             }
             return $this->lista;
         } catch (Exception $ex) {
@@ -61,11 +61,11 @@ class DispositivoCompraDAO extends AbstractDAO {
 
     public function verUno($id) {
         try {
-            $this->query = "SELECT * FROM DispositivoCompras WHERE SerialDispositivo = $id;";
+            $this->query = "SELECT * FROM DispositivoCompras WHERE SerialDispositivo = '$id';";
             $this->resultado = $this->conexion->ejecutar($this->query);
             if (mysqli_num_rows($this->resultado) > 0) {
                 $res = mysqli_fetch_array($this->resultado);
-                $this->dto = new EstadoDTO($res['IdEstado'], $res['Descripcion']);
+                $this->dto = new DispositivoCompraDTO($res['SerialDispositivo'], $res['NumFactura']);
             }
             return $this->dto;
         } catch (Exception $ex) {
@@ -73,13 +73,13 @@ class DispositivoCompraDAO extends AbstractDAO {
         }
     }
 
-    public function verTodosPorIdCompra($id) {
+    public function verTodosPorNumFactura($id) {
         try {
             $this->lista = array();
-            $this->query = "SELECT * FROM DispositivoCompras WHERE IdCompra = $id;";
+            $this->query = "SELECT * FROM DispositivoCompras WHERE NumFactura = '$id';";
             $this->resultado = $this->conexion->ejecutar($this->query);
             while ($res = mysqli_fetch_array($this->resultado)) {
-                array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['IdCompra']));
+                array_push($this->lista, new DispositivoCompraDTO($res['SerialDispositivo'], $res['NumFactura']));
             }
             return $this->lista;
         } catch (Exception $ex) {
