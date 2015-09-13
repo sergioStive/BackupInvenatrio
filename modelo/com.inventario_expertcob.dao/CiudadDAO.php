@@ -83,4 +83,18 @@ class CiudadDAO extends AbstractDAO {
         }
     }
 
+    public function verCiudadPorNombre($nombre) {
+        try {
+            $this->query = "SELECT * FROM Ciudades WHERE NombreCiudad = $nombre;";
+            $this->resultado = $this->conexion->ejecutar($this->query);
+            if (mysqli_num_rows($this->resultado) > 0) {
+                $res = mysqli_fetch_array($this->resultado);
+                $this->dto = new CiudadDTO($res['IdCiudad'], $res['NombreCiudad']);
+            }
+            return $this->dto;
+        } catch (Exception $ex) {
+            return $ex->getMessage();
+        }
+    }
+
 }

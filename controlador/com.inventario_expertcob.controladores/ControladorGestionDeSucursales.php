@@ -16,18 +16,6 @@ class ControladorGestionDeSucursales {
 
     /**
      *
-     * @var SucursalDAO 
-     */
-    private $sDao = null; //instancia de la clase SucursalDAO
-
-    /**
-     *
-     * @var SucursalDTO 
-     */
-    private $sDto = null; //instancia de la clase SucursalDTO
-
-    /**
-     *
      * @var OficinaDAO 
      */
     private $oDao = null; //instancia de la clase OficinaDAO
@@ -55,101 +43,6 @@ class ControladorGestionDeSucursales {
      * @var array 
      */
     private $lista = null; //variable a utilizar como array
-
-    /**
-     * 
-     * @param String $ciudad
-     * @param String $telefono
-     * @param String $direccion
-     * @return String
-     * 
-     */
-
-    public function registrarSucursal($ciudad, $telefono, $direccion) {
-        try {
-            $this->sDao = new SucursalDAO;
-            $this->sDto = $this->sDao->verSucursalPorCiudadYDireccion(utf8_decode($ciudad), utf8_decode($direccion));
-            if ($this->sDto == null) {
-                return '<div class="notificacion"><div class="mensaje">'
-                        . '<h2>Inventario Expertcob</h2>'
-                        . $this->sDao->insertar(new SucursalDTO(0, utf8_decode($ciudad), utf8_decode($direccion), $telefono))
-                        . '</div></div>';
-            } else {
-                return '<div class="notificacion" ><div class="mensaje" id="err">'
-                        . '<h2>Inventario Expertcob</h2>'
-                        . '<img alt="Error" src="../resources/imagenes/Error.png" > Ya existe una sucursal en esa ciudad con esa dirección'
-                        . '</div></div>';
-            }
-        } catch (Exception $ex) {
-            return $ex->getMessage();
-        }
-    }
-
-    /**
-     * 
-     * @param Integer $numero
-     * @param String $ciudad
-     * @param String $telefono
-     * @param String $direccion
-     * @return String
-     */
-    public function modificarSucursal($numero, $ciudad, $telefono, $direccion) {
-        try {
-            $this->sDao = new SucursalDAO();
-            return '<div class="notificacion"><div class="mensaje">'
-                    . '<h2>Inventario Expertcob</h2>'
-                    . $this->sDao->modificar(new SucursalDTO($numero, utf8_decode($ciudad), utf8_decode($direccion), $telefono))
-                    . '</div></div>';
-        } catch (Exception $ex) {
-            return $ex->getMessage();
-        }
-    }
-
-    /**
-     * 
-     * @param Integer $id
-     * @return String
-     */
-    public function eliminarSucursal($id) {
-        try {
-            $this->sDao = new SucursalDAO();
-            return '<div class="notificacion"><div class="mensaje">'
-                    . '<h2>Inventario Expertcob</h2>'
-                    . $this->sDao->eliminar($id)
-                    . '</div></div>';
-        } catch (Exception $ex) {
-            return $ex->getMessage();
-        }
-    }
-
-    /**
-     * 
-     * @param Intenger $id
-     * @return SucursalDTO
-     */
-    public function verUnaSucursal($id) {
-        try {
-            $this->sDao = new SucursalDAO();
-            $this->sDto = $this->sDao->verUno($id);
-            return $this->sDto;
-        } catch (Exception $ex) {
-            return $ex->getMessage();
-        }
-    }
-
-    /**
-     * 
-     * @return array<SucursalDTO>
-     */
-    public function verSucursales() {
-        try {
-            $this->sDao = new SucursalDAO();
-            $this->lista = $this->sDao->verTodos();
-            return $this->lista;
-        } catch (Exception $ex) {
-            return $ex->getMessage();
-        }
-    }
 
     /**
      * 
