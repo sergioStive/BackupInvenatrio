@@ -74,7 +74,7 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                 <?php
                 $controladorSucursales = new ControladorGestionDeSucursales();
                 $controladorUsuarios = new ControladorGestionDeUsuarios();
-                $sucursales = $controladorSucursales->verSucursales();
+                
                 $responsables = $controladorUsuarios->verResponsables();
 
 

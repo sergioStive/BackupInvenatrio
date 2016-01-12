@@ -41,7 +41,7 @@ class MuebleEnserDAO extends AbstractDAO {
         }
     }
 
-    public function modificar(MuebleEnserDTO $dto) {
+    public function modificar($dto) {
         try {
             $this->query = "UPDATE MuebleEnseres SET Descripcion = '" . $dto->getDescripcion() . "' , Cantidad = " . $dto->getCantidad() . ", Valor = '" . $dto->getValor() . "', IdEstado = " . $dto->getIdEstado() . ", IdPuesto = " . $dto->getIdPuesto() . " WHERE IdMuebleEnser = " . $dto->getIdMuebleEnser() . ";";
             $this->resultado = $this->conexion->ejecutar($this->query);

@@ -5,8 +5,8 @@
  *
  * @author Erick Guzmán
  */
-require_once '../modelo/com.inventario_expertcob.dao/TorreDAO.php';
-require_once '../modelo/com.inventario_expertcob.dto/TorreDTO.php';
+//require_once '../modelo/com.inventario_expertcob.dao/TorreDAO.php';
+//require_once '../modelo/com.inventario_expertcob.dto/TorreDTO.php';
 require_once '../modelo/com.inventario_expertcob.dao/OfficeDAO.php';
 require_once '../modelo/com.inventario_expertcob.dto/OfficeDTO.php';
 require_once '../modelo/com.inventario_expertcob.dao/SistemaOperativoDAO.php';

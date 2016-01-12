@@ -315,7 +315,7 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                 } else if (isset($_REQUEST['di'])) {
                     switch ($_REQUEST['di']) {
                         case "r": {
-                                $sucursales = $controladorSucursales->verSucursales();
+                                //$sucursales = $controladorSucursales->verSucursales();
                                 ?>
 
                                 <form class="formPuesto" action="dispositivos.php" method="post">

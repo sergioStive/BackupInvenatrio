@@ -177,7 +177,8 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                     switch ($_REQUEST['us']) {
                         case "r": {
                                 $roles = $controlador->verRoles();
-                                $sucursales = $controladorSucursales->verSucursales();
+//Sucursales ya no se va a utilizar                            
+//    $sucursales = $controladorSucursales->verSucursales();
                                 ?>
 
                                 <form class="formRegistrarUsuario" id="signupForm" action="usuarios.php" method="post">

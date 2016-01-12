@@ -103,7 +103,7 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                 <?php
                 $controladorSucursales = new ControladorGestionDeSucursales();
                 $controlador = new ControladorGestionDeMueblesEnseres();
-                $sucursales = $controladorSucursales->verSucursales();
+                
 
                 if (isset($_REQUEST['btnRegistrar'])) {
                     if ($_REQUEST['txtDescripcion'] != "" && is_numeric($_REQUEST['txtCantidad']) && is_numeric($_REQUEST['txtValor']) && $_REQUEST['txtEstado'] != "" && $_REQUEST['txtOficina'] != "") {

@@ -113,7 +113,8 @@ require '../controlador/com.inventario_expertcob.controladores/ControladorGestio
                 <?php
                 $controladorSucursales = new ControladorGestionDeSucursales();
                 $controladorUsuarios = new ControladorGestionDeUsuarios();
-                $sucursales = $controladorSucursales->verSucursales();
+//Sucursales lo vamos a quitar                
+//$sucursales = $controladorSucursales->verSucursales();
                 $responsables = $controladorUsuarios->verResponsables();
                 if (isset($_REQUEST['btnRegistrar'])) {
                     if ($_REQUEST['txtNombre'] != "" && isset($_REQUEST['responsable']) && isset($_REQUEST['oficina'])) {
