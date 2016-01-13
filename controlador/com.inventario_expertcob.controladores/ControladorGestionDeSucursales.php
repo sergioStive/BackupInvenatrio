@@ -69,7 +69,9 @@ class ControladorGestionDeSucursales {
             return $ex->getMessage();
         }
     }
-
+public function registrarSucursal (){
+    
+}
     /**
      * 
      * @param Integer $idOficina
